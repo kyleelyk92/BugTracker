@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "AddUserToProject";
+}
+
+<h2>AddUserToProject</h2>
+
+
+@using (Html.BeginForm("AddUserToProject", "Projects", FormMethod.Post))
+{
+
+    @Html.DropDownList("projectId");
+    @Html.DropDownList("userId");
+    @Html.DropDownList("addOrRemove")
+    
+    <input type="submit" value="Submit" />
+}

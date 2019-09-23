@@ -1,0 +1,88 @@
+﻿@model IEnumerable<BugTracker_2019_09_17.Models.Ticket>
+
+@{
+    ViewBag.Title = "AllTicketsYouSubmitted";
+}
+
+<h2>AllTicketsYouSubmitted</h2>
+
+<table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketTypeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketPriorityId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerUserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignedToUserId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketTypeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketPriorityId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OwnerUserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssignedToUserId)
+                </td>
+            </tr>
+        }</tbody>
+</table>
+
+@section scripts{
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#table_id').DataTable();
+        });</script>
+}
